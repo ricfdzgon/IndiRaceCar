@@ -6,7 +6,7 @@ public class Wheel : MonoBehaviour
 {
     public Transform wheelMesh;
     private WheelCollider wCollider;
-    private float steerAngulo = 40;
+    private float steerAngulo = 30;
 
     void Start()
     {

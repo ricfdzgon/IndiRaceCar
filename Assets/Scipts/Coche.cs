@@ -16,8 +16,7 @@ public class Coche : MonoBehaviour
     private float moveDirection;
     private bool brake;
     private float steerDirection;
-    Vector3 posicion_inicial;
-    private bool modoAgarre;
+    private float marchaEngranada;
 
     void Start()
     {
@@ -26,15 +25,48 @@ public class Coche : MonoBehaviour
         wheels[1] = frontRightWheel;
         wheels[2] = RearLeftWheel;
         wheels[3] = ReartRightWheel;
-        posicion_inicial = transform.position;
-        modoAgarre = false;
+        marchaEngranada = 1;
     }
 
     void Update()
     {
-        moveDirection = Input.GetAxis("Vertical");
-        steerDirection = Input.GetAxis("Horizontal");
-        if (Input.GetKey(KeyCode.Space))
+        //Gestion de las marchas
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            marchaEngranada--;
+        }
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            marchaEngranada++;
+        }
+
+        marchaEngranada = Mathf.Clamp(marchaEngranada, -1, 1);
+        Debug.Log(marchaEngranada);
+
+        //Gestion del acelerador
+        if (Input.GetKey(KeyCode.W))
+        {
+            switch (marchaEngranada)
+            {
+                case 1:
+                    moveDirection = 1;
+                    break;
+                case 0:
+                    moveDirection = 0;
+                    break;
+                case -1:
+                    moveDirection = -1;
+                    break;
+            }
+        }
+        else
+        {
+            moveDirection = 0;
+        }
+
+        //Gestion del freno
+        if (Input.GetKey(KeyCode.S))
         {
             brake = true;
         }
@@ -43,16 +75,10 @@ public class Coche : MonoBehaviour
             brake = false;
         }
 
-        if (Input.GetKey(KeyCode.R))
-        {
-            transform.position = posicion_inicial;
-            GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
-        }
-        if (Input.GetKey(KeyCode.T))
-        {
-            modoAgarre = !modoAgarre;
-        }
-        Debug.Log("MODO AGARRE " + modoAgarre);
+        //  moveDirection = Input.GetAxis("Vertical");
+
+        //Gestion de la direccion
+        steerDirection = Input.GetAxis("Horizontal");
     }
 
     void FixedUpdate()
@@ -61,17 +87,9 @@ public class Coche : MonoBehaviour
         frontRightWheel.Steer(steerDirection);
         if (brake)
         {
-            if (modoAgarre)
+            foreach (Wheel wheel in wheels)
             {
-                foreach (Wheel wheel in wheels)
-                {
-                    wheel.Brake(brakeTorque);
-                }
-            }
-            else
-            {
-                RearLeftWheel.Brake(brakeTorque);
-                ReartRightWheel.Brake(brakeTorque);
+                wheel.Brake(brakeTorque);
             }
         }
         else
@@ -81,19 +99,10 @@ public class Coche : MonoBehaviour
                 wheel.Brake(0);
             }
 
-            if (modoAgarre)
+            foreach (Wheel wheel in wheels)
             {
-                foreach (Wheel wheel in wheels)
-                {
-                    wheel.Accelerate(moveDirection * motorTorque / 2);
-                }
+                wheel.Accelerate(moveDirection * motorTorque / 2);
             }
-            else
-            {
-                RearLeftWheel.Accelerate(moveDirection * motorTorque);
-                ReartRightWheel.Accelerate(moveDirection * motorTorque);
-            }
-
         }
     }
 }
