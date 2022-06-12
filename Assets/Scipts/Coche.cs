@@ -11,6 +11,7 @@ public class Coche : MonoBehaviour
 
     private Wheel[] wheels;
 
+    public Rigidbody rb;
     public float motorTorque;
     public float brakeTorque;
     private float moveDirection;
@@ -21,6 +22,10 @@ public class Coche : MonoBehaviour
 
     void Start()
     {
+        //Bajar el centro de masa para que no vuelque el coche
+        rb = GetComponent<Rigidbody>();
+        this.rb.centerOfMass = new Vector3(0, -0.1f, 0);
+
         wheels = new Wheel[4];
         wheels[0] = frontLeftWheel;
         wheels[1] = frontRightWheel;
@@ -31,10 +36,10 @@ public class Coche : MonoBehaviour
 
     void Update()
     {
-        
-      var rot = transform.rotation;
-      rot.z = Mathf.Clamp(rot.z, -1.0f, 1.0f);
-      transform.rotation = rot;
+
+        var rot = transform.rotation;
+        rot.z = Mathf.Clamp(rot.z, -1.0f, 1.0f);
+        transform.rotation = rot;
 
         //Gestion de las marchas
         if (Input.GetKeyDown(KeyCode.Q))
