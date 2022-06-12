@@ -59,13 +59,5 @@ PrefabInstance:
       propertyPath: m_Name
       value: Free Racing Car Blue Variant
       objectReference: {fileID: 0}
-    - target: {fileID: 6320940773568149214, guid: 133308cdb8794744caaef026bde9e1f0, type: 3}
-      propertyPath: brakeTorque
-      value: 6000
-      objectReference: {fileID: 0}
-    - target: {fileID: 7495443279060062592, guid: 133308cdb8794744caaef026bde9e1f0, type: 3}
-      propertyPath: m_Mass
-      value: 1100
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 133308cdb8794744caaef026bde9e1f0, type: 3}

@@ -11,7 +11,7 @@ public class Coche : MonoBehaviour
 
     private Wheel[] wheels;
 
-    public Rigidbody rb;
+    private Rigidbody rb;
     public float motorTorque;
     public float brakeTorque;
     private float moveDirection;
