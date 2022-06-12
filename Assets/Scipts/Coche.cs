@@ -31,6 +31,11 @@ public class Coche : MonoBehaviour
 
     void Update()
     {
+        
+      var rot = transform.rotation;
+      rot.z = Mathf.Clamp(rot.z, -1.0f, 1.0f);
+      transform.rotation = rot;
+
         //Gestion de las marchas
         if (Input.GetKeyDown(KeyCode.Q))
         {
