@@ -15,6 +15,7 @@ public class Coche : MonoBehaviour
     public float brakeTorque;
     private float moveDirection;
     private bool brake;
+    private bool rearBrake;
     private float steerDirection;
     private float marchaEngranada;
 
@@ -69,10 +70,19 @@ public class Coche : MonoBehaviour
         if (Input.GetKey(KeyCode.S))
         {
             brake = true;
+            rearBrake = false;
         }
         else
         {
             brake = false;
+            rearBrake = false;
+        }
+
+        //Gestion del freno de mano
+        if (Input.GetKey(KeyCode.Space))
+        {
+            brake = true;
+            rearBrake = true;
         }
 
         //  moveDirection = Input.GetAxis("Vertical");
@@ -87,9 +97,17 @@ public class Coche : MonoBehaviour
         frontRightWheel.Steer(steerDirection);
         if (brake)
         {
-            foreach (Wheel wheel in wheels)
+            if (!rearBrake)
             {
-                wheel.Brake(brakeTorque);
+                foreach (Wheel wheel in wheels)
+                {
+                    wheel.Brake(brakeTorque);
+                }
+            }
+            else
+            {
+                RearLeftWheel.Brake(brakeTorque * 2);
+                ReartRightWheel.Brake(brakeTorque * 2);
             }
         }
         else
