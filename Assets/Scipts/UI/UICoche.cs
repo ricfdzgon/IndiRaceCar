@@ -7,6 +7,7 @@ public class UICoche : MonoBehaviour
 {
     public TextMeshProUGUI marchaTexto;
     public TextMeshProUGUI velocidadTexto;
+    public TextMeshProUGUI temporizadorTexto;
     public static UICoche instance;
     void Start()
     {
@@ -35,4 +36,12 @@ public class UICoche : MonoBehaviour
         velocidadTexto.text = velocidad.ToString();
     }
 
+    public void UpdateTemporizador(float temporizador)
+    {
+        double temporizadortext = System.Math.Round(temporizador, 2);
+        if (temporizador < 999)
+        {
+            temporizadorTexto.text = temporizadortext.ToString();
+        }
+    }
 }

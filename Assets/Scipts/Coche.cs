@@ -19,7 +19,7 @@ public class Coche : MonoBehaviour
     private bool rearBrake;
     private float steerDirection;
     private float marchaEngranada;
-
+    private float timer;
     void Start()
     {
         //Bajar el centro de masa para que no vuelque el coche
@@ -32,6 +32,7 @@ public class Coche : MonoBehaviour
         wheels[2] = RearLeftWheel;
         wheels[3] = ReartRightWheel;
         marchaEngranada = 1;
+        timer = 0.0f;
     }
 
     void Update()
@@ -102,6 +103,11 @@ public class Coche : MonoBehaviour
         //Gestion de la direccion
         steerDirection = Input.GetAxis("Horizontal");
         UICoche.instance.CambiarTextoVelocidad(rb.velocity.magnitude);
+
+
+        //Gestion del tiempo
+        timer += Time.deltaTime;
+        UICoche.instance.UpdateTemporizador(timer);
     }
 
     void FixedUpdate()
