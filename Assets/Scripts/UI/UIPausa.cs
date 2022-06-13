@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class UIPausa : MonoBehaviour
 {
     public Canvas menuPausa;
@@ -31,5 +31,13 @@ public class UIPausa : MonoBehaviour
     {
         Time.timeScale = 1;
         menuPausa.enabled = false;
+    }
+
+    public void ReiniciarPantalla()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Time.timeScale = 1;
+        menuPausa.enabled = false;
+        
     }
 }
