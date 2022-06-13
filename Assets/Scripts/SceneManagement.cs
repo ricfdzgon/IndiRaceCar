@@ -5,7 +5,7 @@ using UnityEngine;
 public class SceneManagement : MonoBehaviour
 {
     public static SceneManagement instance;
-    public float totalTime;
+    private float totalTime;
     void Start()
     {
         Time.timeScale = 1;
@@ -18,6 +18,7 @@ public class SceneManagement : MonoBehaviour
         double tiempotext = System.Math.Round(tiempo, 2);
         Debug.Log("Tiempo final" + tiempotext);
         Time.timeScale = 0;
+        UIPausa.instance.MenuFinal(tiempotext);
     }
 
 }

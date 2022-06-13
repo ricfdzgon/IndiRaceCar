@@ -2,12 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 public class UIPausa : MonoBehaviour
 {
     public Canvas menuPausa;
+    public Canvas menuFinal;
+    public TextMeshProUGUI tiempoFinal;
+    public GameObject botonesMenuFinal;
+
+    public static UIPausa instance;
     void Start()
     {
         menuPausa.enabled = false;
+        menuFinal.enabled = false;
+        instance = this;
     }
 
     void Update()
@@ -54,6 +62,14 @@ public class UIPausa : MonoBehaviour
 
     public void MenuFinal(double time)
     {
-        
+        menuFinal.enabled = true;
+        menuPausa.enabled = false;
+        botonesMenuFinal.SetActive(false);
+        tiempoFinal.text = time.ToString();
+    }
+
+    public void CargarDatos()
+    {
+        botonesMenuFinal.SetActive(true);
     }
 }
