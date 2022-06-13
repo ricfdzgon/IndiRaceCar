@@ -6,6 +6,7 @@ using TMPro;
 public class UICoche : MonoBehaviour
 {
     public TextMeshProUGUI marchaTexto;
+    public TextMeshProUGUI velocidadTexto;
     public static UICoche instance;
     void Start()
     {
@@ -28,5 +29,10 @@ public class UICoche : MonoBehaviour
         }
     }
 
+    public void CambiarTextoVelocidad(float velocidad)
+    {
+        velocidad = (int)velocidad * 3;
+        velocidadTexto.text = velocidad.ToString();
+    }
 
 }

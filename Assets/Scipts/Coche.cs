@@ -101,6 +101,7 @@ public class Coche : MonoBehaviour
 
         //Gestion de la direccion
         steerDirection = Input.GetAxis("Horizontal");
+        UICoche.instance.CambiarTextoVelocidad(rb.velocity.magnitude);
     }
 
     void FixedUpdate()
