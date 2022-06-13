@@ -51,4 +51,9 @@ public class UIPausa : MonoBehaviour
         Time.timeScale = 1;
         menuPausa.enabled = false;
     }
+
+    public void MenuFinal(double time)
+    {
+        
+    }
 }

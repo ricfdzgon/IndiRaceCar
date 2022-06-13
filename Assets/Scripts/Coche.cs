@@ -17,9 +17,11 @@ public class Coche : MonoBehaviour
     private float moveDirection;
     private bool brake;
     private bool rearBrake;
+    private bool onTime;
     private float steerDirection;
     private float marchaEngranada;
     private float timer;
+
     void Start()
     {
         //Bajar el centro de masa para que no vuelque el coche
@@ -33,6 +35,7 @@ public class Coche : MonoBehaviour
         wheels[3] = ReartRightWheel;
         marchaEngranada = 1;
         timer = 0.0f;
+        onTime = false;
     }
 
     void Update()
@@ -106,8 +109,11 @@ public class Coche : MonoBehaviour
 
 
         //Gestion del tiempo
-        timer += Time.deltaTime;
-        UICoche.instance.UpdateTemporizador(timer);
+        if (onTime)
+        {
+            timer += Time.deltaTime;
+            UICoche.instance.UpdateTemporizador(timer);
+        }
     }
 
     void FixedUpdate()
@@ -141,5 +147,23 @@ public class Coche : MonoBehaviour
                 wheel.Accelerate(moveDirection * motorTorque / 2);
             }
         }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Start")
+        {
+            onTime = true;
+        }
+
+        if (other.gameObject.tag == "Finish")
+        {
+            onTime = false;
+            Invoke("Finalizar", 3f);
+        }
+    }
+    private void Finalizar()
+    {
+        SceneManagement.instance.FinalizarPantalla(timer);
     }
 }
