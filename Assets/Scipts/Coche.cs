@@ -45,15 +45,17 @@ public class Coche : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q))
         {
             marchaEngranada--;
+            UICoche.instance.CambiarTextoMarcha(marchaEngranada);
         }
 
         if (Input.GetKeyDown(KeyCode.E))
         {
             marchaEngranada++;
+            UICoche.instance.CambiarTextoMarcha(marchaEngranada);
         }
 
         marchaEngranada = Mathf.Clamp(marchaEngranada, -1, 1);
-        Debug.Log(marchaEngranada);
+
 
         //Gestion del acelerador
         if (Input.GetKey(KeyCode.W))
