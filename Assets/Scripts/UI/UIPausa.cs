@@ -26,4 +26,10 @@ public class UIPausa : MonoBehaviour
             }
         }
     }
+
+    public void Continuar()
+    {
+        Time.timeScale = 1;
+        menuPausa.enabled = false;
+    }
 }
