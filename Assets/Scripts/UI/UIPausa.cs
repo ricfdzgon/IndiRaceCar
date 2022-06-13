@@ -38,6 +38,17 @@ public class UIPausa : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         Time.timeScale = 1;
         menuPausa.enabled = false;
-        
+    }
+
+    public void Salir()
+    {
+        Application.Quit();
+    }
+
+    public void Menu()
+    {
+        SceneManager.LoadScene("MainMenu");
+        Time.timeScale = 1;
+        menuPausa.enabled = false;
     }
 }
