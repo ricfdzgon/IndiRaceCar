@@ -164,6 +164,8 @@ public class Coche : MonoBehaviour
     }
     private void Finalizar()
     {
-        SceneManagement.instance.FinalizarPantalla(timer);
+        Time.timeScale = 0;
+        double tiempotext = System.Math.Round(timer, 2);
+        UIPausa.instance.MenuFinal(tiempotext);
     }
 }

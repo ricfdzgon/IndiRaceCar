@@ -13,12 +13,11 @@ public class SceneManagement : MonoBehaviour
         totalTime = 0;
     }
 
-    public void FinalizarPantalla(float tiempo)
+    public void FinalizarPantalla(double tiempo, string nombre)
     {
-        double tiempotext = System.Math.Round(tiempo, 2);
-        Debug.Log("Tiempo final" + tiempotext);
-        Time.timeScale = 0;
-        UIPausa.instance.MenuFinal(tiempotext);
+        //En vez de este debug tengo que guardar el nombre junto al tiempo para guardarlo en un archivo
+        Debug.Log(nombre);
+        Debug.Log(tiempo);
     }
 
 }
