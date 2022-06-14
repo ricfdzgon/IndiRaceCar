@@ -161,6 +161,10 @@ public class Coche : MonoBehaviour
             onTime = false;
             Invoke("Finalizar", 3f);
         }
+        if (other.gameObject.tag == "NearFinish")
+        {
+            SceneManagement.instance.CargarEfectosFinales();
+        }
     }
     private void Finalizar()
     {

@@ -3214,3 +3214,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5da9a492e969f314eaf6841a234a1345, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  efectosFinales:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

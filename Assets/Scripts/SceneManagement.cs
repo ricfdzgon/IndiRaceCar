@@ -6,6 +6,7 @@ public class SceneManagement : MonoBehaviour
 {
     public static SceneManagement instance;
     private float totalTime;
+    public List<GameObject> efectosFinales = new List<GameObject>();
     void Start()
     {
         Time.timeScale = 1;
@@ -20,4 +21,11 @@ public class SceneManagement : MonoBehaviour
         Debug.Log(tiempo);
     }
 
+    public void CargarEfectosFinales()
+    {
+        foreach (GameObject efecto in efectosFinales)
+        {
+            efecto.SetActive(true);
+        }
+    }
 }
