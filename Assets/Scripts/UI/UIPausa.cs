@@ -9,6 +9,7 @@ public class UIPausa : MonoBehaviour
     public Canvas menuFinal;
     public TextMeshProUGUI tiempoFinal;
     public GameObject botonesMenuFinal;
+    public GameObject scrollView;
     public TMP_InputField nombre;
     private double finalTime;
 
@@ -68,12 +69,14 @@ public class UIPausa : MonoBehaviour
         menuFinal.enabled = true;
         menuPausa.enabled = false;
         botonesMenuFinal.SetActive(false);
+        scrollView.SetActive(false);
         tiempoFinal.text = finalTime.ToString();
     }
 
     public void CargarDatos()
     {
         SceneManagement.instance.FinalizarPantalla(finalTime, nombre.text, SceneManager.GetActiveScene().name);
+        scrollView.SetActive(true);
         botonesMenuFinal.SetActive(true);
         nombre.gameObject.SetActive(false);
     }

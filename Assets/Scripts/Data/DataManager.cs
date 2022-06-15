@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DataManager : MonoBehaviour
 {
@@ -14,39 +15,39 @@ public class DataManager : MonoBehaviour
     void Start()
     {
         //Cargar los datos de puntuaciones que tengamos guardados en PlayerPrefs
-        LoadData();
+        LoadData(SceneManager.GetActiveScene().name);
     }
 
     public void AddScore(ScoreData scoreData)
     {
         scoreDataList.list.Add(scoreData);
 
-        SaveData();
+        SaveData(SceneManager.GetActiveScene().name);
     }
 
-    private void SaveData()
+    private void SaveData(string nombreCircuito)
     {
         //Guardar los datos de puntuaciones en PlayerPrefs
         if (scoreDataList != null)
         {
-            PlayerPrefs.SetString("scoreList", JsonUtility.ToJson(scoreDataList));
+            PlayerPrefs.SetString("scoreList-" + nombreCircuito, JsonUtility.ToJson(scoreDataList));
         }
     }
 
-    private void LoadData()
+    private void LoadData(string nombreCircuito)
     {
         //Cargar los datos de puntuaciones que tengamos guardados en PlayerPrefs
-        if (PlayerPrefs.HasKey("scoreList"))
+        if (PlayerPrefs.HasKey("scoreList-" + nombreCircuito))
         {
             scoreDataList = JsonUtility.FromJson<ScoreDataList>(PlayerPrefs.GetString("scoreList"));
         }
     }
 
-    public void ClearData()
+    public void ClearData(string nombreCircuito)
     {
-        if (PlayerPrefs.HasKey("scoreList"))
+        if (PlayerPrefs.HasKey("scoreList-" + nombreCircuito))
         {
-            PlayerPrefs.DeleteKey("scoreList");
+            PlayerPrefs.DeleteKey("scoreList-" + nombreCircuito);
         }
         scoreDataList.list.Clear();
     }
