@@ -73,7 +73,7 @@ public class UIPausa : MonoBehaviour
 
     public void CargarDatos()
     {
-        SceneManagement.instance.FinalizarPantalla(finalTime, nombre.text);
+        SceneManagement.instance.FinalizarPantalla(finalTime, nombre.text, SceneManager.GetActiveScene().name);
         botonesMenuFinal.SetActive(true);
         nombre.gameObject.SetActive(false);
     }

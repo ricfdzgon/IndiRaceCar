@@ -14,11 +14,12 @@ public class SceneManagement : MonoBehaviour
         totalTime = 0;
     }
 
-    public void FinalizarPantalla(double tiempo, string nombre)
+    public void FinalizarPantalla(double tiempo, string nombre,string nombreEscena)
     {
         //En vez de este debug tengo que guardar el nombre junto al tiempo para guardarlo en un archivo
         Debug.Log(nombre);
         Debug.Log(tiempo);
+        Debug.Log(nombreEscena);
     }
 
     public void CargarEfectosFinales()
