@@ -165,6 +165,10 @@ public class Coche : MonoBehaviour
         {
             SceneManagement.instance.CargarEfectosFinales();
         }
+        if (other.gameObject.tag == "SecondLapTrigger")
+        {
+            ControlObstaculos.instance.CambiarVuelta();
+        }
     }
     private void Finalizar()
     {
