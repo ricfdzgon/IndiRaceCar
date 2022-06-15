@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 [Serializable]
-public class ScoreData
+public class ScoreData : IComparable<ScoreData>
 {
     public string playerName;
     public double time;
@@ -14,6 +14,19 @@ public class ScoreData
         this.playerName = playerName;
         this.time = time;
         this.sceneName = sceneName;
+    }
+
+    public int CompareTo(ScoreData otherScoreData)
+    {
+        if (this.time > otherScoreData.time)
+        {
+            return 1;
+        }
+        else if (this.time == otherScoreData.time)
+        {
+            return 0;
+        }
+        return -1;
     }
 }
 

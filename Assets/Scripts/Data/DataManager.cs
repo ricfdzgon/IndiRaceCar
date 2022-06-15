@@ -6,23 +6,48 @@ using UnityEngine.SceneManagement;
 public class DataManager : MonoBehaviour
 {
     public static DataManager instance;
-    public ScoreDataList scoreDataList = new ScoreDataList();
+    public ScoreDataList scoreDataList;
 
     void Awake()
     {
-        instance = this;
+        if (instance == null)
+        {
+            instance = this;
+        }
     }
     void Start()
     {
+        scoreDataList = new ScoreDataList();
+        if (scoreDataList == null)
+        {
+            Debug.Log("Start: scoreDataList e null");
+            return;
+        }
         //Cargar los datos de puntuaciones que tengamos guardados en PlayerPrefs
         LoadData(SceneManager.GetActiveScene().name);
     }
 
     public void AddScore(ScoreData scoreData)
     {
-        scoreDataList.list.Add(scoreData);
+        if (scoreDataList == null)
+        {
+            Debug.Log("scoreDataList e null");
+            return;
+        }
 
-        SaveData(SceneManager.GetActiveScene().name);
+        if (scoreDataList.list == null)
+        {
+            Debug.Log("scoreDataList.list e null");
+            return;
+        }
+
+
+        if (scoreData != null && scoreDataList != null && scoreDataList.list != null)
+        {
+            scoreDataList.list.Add(scoreData);
+            scoreDataList.list.Sort();
+            SaveData(SceneManager.GetActiveScene().name);
+        }
     }
 
     private void SaveData(string nombreCircuito)
@@ -39,7 +64,8 @@ public class DataManager : MonoBehaviour
         //Cargar los datos de puntuaciones que tengamos guardados en PlayerPrefs
         if (PlayerPrefs.HasKey("scoreList-" + nombreCircuito))
         {
-            scoreDataList = JsonUtility.FromJson<ScoreDataList>(PlayerPrefs.GetString("scoreList"));
+            scoreDataList = JsonUtility.FromJson<ScoreDataList>(PlayerPrefs.GetString("scoreList-" + nombreCircuito));
+            scoreDataList.list.Sort();
         }
     }
 

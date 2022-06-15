@@ -7,6 +7,7 @@ public class SceneManagement : MonoBehaviour
     public static SceneManagement instance;
     private float totalTime;
     public List<GameObject> efectosFinales = new List<GameObject>();
+    public ScoreTable scoreTable;
     void Start()
     {
         Time.timeScale = 1;
@@ -21,7 +22,7 @@ public class SceneManagement : MonoBehaviour
         Debug.Log(tiempo);
         Debug.Log(nombreEscena);
 
-        DataManager.instance.AddScore(new ScoreData(nombre, tiempo, nombreEscena));
+        scoreTable.AddScore(new ScoreData(nombre, tiempo, nombreEscena));
     }
 
     public void CargarEfectosFinales()
