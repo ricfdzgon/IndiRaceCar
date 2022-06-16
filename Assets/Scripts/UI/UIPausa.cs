@@ -8,6 +8,8 @@ public class UIPausa : MonoBehaviour
     public Canvas menuPausa;
     public Canvas menuFinal;
     public TextMeshProUGUI tiempoFinal;
+    public TextMeshProUGUI youWin;
+
     public GameObject botonesMenuFinal;
     public GameObject scrollView;
     public TMP_InputField nombre;
@@ -79,5 +81,11 @@ public class UIPausa : MonoBehaviour
         scrollView.SetActive(true);
         botonesMenuFinal.SetActive(true);
         nombre.gameObject.SetActive(false);
+    }
+
+    public void DatosDetrasScrollView()
+    {
+        youWin.text = "";
+        tiempoFinal.text = "";
     }
 }

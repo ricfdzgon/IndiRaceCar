@@ -34929,6 +34929,10 @@ PrefabInstance:
       propertyPath: efectosFinales.Array.data[7]
       value: 
       objectReference: {fileID: 1910397235}
+    - target: {fileID: 6913243128107434996, guid: 89c66b9e467c0104ba1d10e39371cb9e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6913243129154274089, guid: 89c66b9e467c0104ba1d10e39371cb9e, type: 3}
       propertyPath: m_Name
       value: SceneManager

@@ -29,19 +29,6 @@ public class DataManager : MonoBehaviour
 
     public void AddScore(ScoreData scoreData)
     {
-        if (scoreDataList == null)
-        {
-            Debug.Log("scoreDataList e null");
-            return;
-        }
-
-        if (scoreDataList.list == null)
-        {
-            Debug.Log("scoreDataList.list e null");
-            return;
-        }
-
-
         if (scoreData != null && scoreDataList != null && scoreDataList.list != null)
         {
             scoreDataList.list.Add(scoreData);

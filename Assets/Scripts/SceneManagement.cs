@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SceneManagement : MonoBehaviour
 {
@@ -21,7 +22,7 @@ public class SceneManagement : MonoBehaviour
         Debug.Log(nombre);
         Debug.Log(tiempo);
         Debug.Log(nombreEscena);
-
+        UIPausa.instance.DatosDetrasScrollView();
         scoreTable.AddScore(new ScoreData(nombre, tiempo, nombreEscena));
     }
 
@@ -31,5 +32,11 @@ public class SceneManagement : MonoBehaviour
         {
             efecto.SetActive(true);
         }
+    }
+
+    public void BorrarDatosGuardados()
+    {
+        DataManager.instance.ClearData(SceneManager.GetActiveScene().name);
+        scoreTable.UpdateData();
     }
 }

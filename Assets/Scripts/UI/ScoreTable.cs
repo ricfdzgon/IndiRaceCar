@@ -9,7 +9,6 @@ public class ScoreTable : MonoBehaviour
 
     [Tooltip("Referencia al contenedor dentro de la lista deslizable")]
     public Transform content;
-    // Start is called before the first frame update
     void Start()
     {
         if (scoreLineTemplate == null)
@@ -23,13 +22,6 @@ public class ScoreTable : MonoBehaviour
         }
 
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     public void AddScore(ScoreData scoreData)
     {
         //Añadir los nuevos datos a la lista de puntuaciones
@@ -41,7 +33,6 @@ public class ScoreTable : MonoBehaviour
         DataManager.instance.AddScore(scoreData);
 
         UpdateData();
-
     }
 
     public void UpdateData()
