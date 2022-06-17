@@ -870,14 +870,14 @@ WheelCollider:
   m_Mass: 20
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
-    m_ExtremumSlip: 2
-    m_ExtremumValue: 2
+    m_ExtremumSlip: 3
+    m_ExtremumValue: 3
     m_AsymptoteSlip: 0.8
     m_AsymptoteValue: 0.5
     m_Stiffness: 1
   m_SidewaysFriction:
-    m_ExtremumSlip: 2
-    m_ExtremumValue: 2
+    m_ExtremumSlip: 3
+    m_ExtremumValue: 3
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 0.75
     m_Stiffness: 1
@@ -1201,14 +1201,14 @@ WheelCollider:
   m_Mass: 20
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
-    m_ExtremumSlip: 2
-    m_ExtremumValue: 2
+    m_ExtremumSlip: 3
+    m_ExtremumValue: 3
     m_AsymptoteSlip: 0.8
     m_AsymptoteValue: 0.5
     m_Stiffness: 1
   m_SidewaysFriction:
-    m_ExtremumSlip: 2
-    m_ExtremumValue: 2
+    m_ExtremumSlip: 3
+    m_ExtremumValue: 3
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 0.75
     m_Stiffness: 1
@@ -1404,14 +1404,14 @@ WheelCollider:
   m_Mass: 20
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
-    m_ExtremumSlip: 2
-    m_ExtremumValue: 2
+    m_ExtremumSlip: 3
+    m_ExtremumValue: 3
     m_AsymptoteSlip: 0.8
     m_AsymptoteValue: 0.5
     m_Stiffness: 1
   m_SidewaysFriction:
-    m_ExtremumSlip: 2
-    m_ExtremumValue: 2
+    m_ExtremumSlip: 3
+    m_ExtremumValue: 3
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 0.75
     m_Stiffness: 1
@@ -1426,9 +1426,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2792218741957914664}
   - component: {fileID: 7495443279060062592}
-  - component: {fileID: 6320940773568149214}
+  - component: {fileID: 24277201443999457}
   m_Layer: 0
-  m_Name: Free Racing Car
+  m_Name: MultiRacingCar
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1443,7 +1443,7 @@ Transform:
   m_GameObject: {fileID: 3311311803080157842}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2, y: 0, z: 4}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children:
   - {fileID: 1792549862734306809}
   - {fileID: 7096574665496613375}
@@ -1472,7 +1472,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &6320940773568149214
+--- !u!114 &24277201443999457
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1481,14 +1481,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 3311311803080157842}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 126e476df05ccbd49aa68bbe36e0821e, type: 3}
+  m_Script: {fileID: 11500000, guid: 9e5013800b80f874bb599ab3a59b1062, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   frontLeftWheel: {fileID: 2173106781008478790}
   frontRightWheel: {fileID: 2371415263915757954}
   RearLeftWheel: {fileID: 6899185464920449020}
   ReartRightWheel: {fileID: 3718827162534354519}
-  motorTorque: 600
+  motorTorque: 500
   brakeTorque: 10000
 --- !u!1 &3716944837667557343
 GameObject:
@@ -1616,14 +1616,14 @@ WheelCollider:
   m_Mass: 20
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
-    m_ExtremumSlip: 2
-    m_ExtremumValue: 2
+    m_ExtremumSlip: 3
+    m_ExtremumValue: 3
     m_AsymptoteSlip: 0.8
     m_AsymptoteValue: 0.5
     m_Stiffness: 1
   m_SidewaysFriction:
-    m_ExtremumSlip: 2
-    m_ExtremumValue: 2
+    m_ExtremumSlip: 3
+    m_ExtremumValue: 3
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 0.75
     m_Stiffness: 1
