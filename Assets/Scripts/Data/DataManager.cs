@@ -46,7 +46,7 @@ public class DataManager : MonoBehaviour
         }
     }
 
-    private void LoadData(string nombreCircuito)
+    public void LoadData(string nombreCircuito)
     {
         //Cargar los datos de puntuaciones que tengamos guardados en PlayerPrefs
         if (PlayerPrefs.HasKey("scoreList-" + nombreCircuito))
@@ -64,5 +64,4 @@ public class DataManager : MonoBehaviour
         }
         scoreDataList.list.Clear();
     }
-
 }
