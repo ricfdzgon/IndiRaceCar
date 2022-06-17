@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MultiplayerCoche1 : MonoBehaviour
+public class MultiplayerCoche2 : MonoBehaviour
 {
     public Wheel frontLeftWheel;
     public Wheel frontRightWheel;
@@ -46,23 +46,23 @@ public class MultiplayerCoche1 : MonoBehaviour
         transform.rotation = rot;
 
         //Gestion de las marchas
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.K))
         {
             marchaEngranada--;
-         //   UICoche.instance.CambiarTextoMarcha(marchaEngranada);
+           // UICoche.instance.CambiarTextoMarcha(marchaEngranada);
         }
 
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.L))
         {
             marchaEngranada++;
-       //     UICoche.instance.CambiarTextoMarcha(marchaEngranada);
+          //  UICoche.instance.CambiarTextoMarcha(marchaEngranada);
         }
 
         marchaEngranada = Mathf.Clamp(marchaEngranada, -1, 1);
 
 
         //Gestion del acelerador
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.UpArrow))
         {
             switch (marchaEngranada)
             {
@@ -83,7 +83,7 @@ public class MultiplayerCoche1 : MonoBehaviour
         }
 
         //Gestion del freno
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.DownArrow))
         {
             brake = true;
             rearBrake = false;
@@ -95,7 +95,7 @@ public class MultiplayerCoche1 : MonoBehaviour
         }
 
         //Gestion del freno de mano
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.RightShift))
         {
             brake = true;
             rearBrake = true;
@@ -105,7 +105,7 @@ public class MultiplayerCoche1 : MonoBehaviour
 
         //Gestion de la direccion
         steerDirection = Input.GetAxis("Horizontal");
-        //        UICoche.instance.CambiarTextoVelocidad(rb.velocity.magnitude);
+      //  UICoche.instance.CambiarTextoVelocidad(rb.velocity.magnitude);
 
 
         //Gestion del tiempo
