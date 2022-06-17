@@ -49,13 +49,13 @@ public class MultiplayerCoche1 : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q))
         {
             marchaEngranada--;
-         //   UICoche.instance.CambiarTextoMarcha(marchaEngranada);
+            //   UICoche.instance.CambiarTextoMarcha(marchaEngranada);
         }
 
         if (Input.GetKeyDown(KeyCode.E))
         {
             marchaEngranada++;
-       //     UICoche.instance.CambiarTextoMarcha(marchaEngranada);
+            //     UICoche.instance.CambiarTextoMarcha(marchaEngranada);
         }
 
         marchaEngranada = Mathf.Clamp(marchaEngranada, -1, 1);
@@ -112,7 +112,7 @@ public class MultiplayerCoche1 : MonoBehaviour
         if (onTime)
         {
             timer += Time.deltaTime;
-         //   UICoche.instance.UpdateTemporizador(timer);
+            //   UICoche.instance.UpdateTemporizador(timer);
         }
     }
 
@@ -159,7 +159,7 @@ public class MultiplayerCoche1 : MonoBehaviour
         if (other.gameObject.tag == "Finish")
         {
             onTime = false;
-            Invoke("Finalizar", 3f);
+            Finalizar();
         }
         if (other.gameObject.tag == "NearFinish")
         {
@@ -172,6 +172,6 @@ public class MultiplayerCoche1 : MonoBehaviour
     }
     private void Finalizar()
     {
-        MultiplayerSceneManager.instance.FinalizarPantalla("Coche 1");
+        MultiplayerUIPausa.instance.FinalizarPantalla("Coche Amarillo");
     }
 }

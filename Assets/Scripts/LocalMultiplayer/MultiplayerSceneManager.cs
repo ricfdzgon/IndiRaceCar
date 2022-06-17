@@ -14,12 +14,6 @@ public class MultiplayerSceneManager : MonoBehaviour
         instance = this;
         totalTime = 0;
     }
-
-    public void FinalizarPantalla(string cocheGanador)
-    {
-        Time.timeScale = 0;
-    }
-
     public void CargarEfectosFinales()
     {
         foreach (GameObject efecto in efectosFinales)

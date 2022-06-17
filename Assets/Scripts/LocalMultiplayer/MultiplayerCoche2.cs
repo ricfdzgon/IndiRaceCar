@@ -49,13 +49,13 @@ public class MultiplayerCoche2 : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.K))
         {
             marchaEngranada--;
-           // UICoche.instance.CambiarTextoMarcha(marchaEngranada);
+            // UICoche.instance.CambiarTextoMarcha(marchaEngranada);
         }
 
         if (Input.GetKeyDown(KeyCode.L))
         {
             marchaEngranada++;
-          //  UICoche.instance.CambiarTextoMarcha(marchaEngranada);
+            //  UICoche.instance.CambiarTextoMarcha(marchaEngranada);
         }
 
         marchaEngranada = Mathf.Clamp(marchaEngranada, -1, 1);
@@ -105,14 +105,14 @@ public class MultiplayerCoche2 : MonoBehaviour
 
         //Gestion de la direccion
         steerDirection = Input.GetAxis("Horizontal");
-      //  UICoche.instance.CambiarTextoVelocidad(rb.velocity.magnitude);
+        //  UICoche.instance.CambiarTextoVelocidad(rb.velocity.magnitude);
 
 
         //Gestion del tiempo
         if (onTime)
         {
             timer += Time.deltaTime;
-         //   UICoche.instance.UpdateTemporizador(timer);
+            //   UICoche.instance.UpdateTemporizador(timer);
         }
     }
 
@@ -159,7 +159,7 @@ public class MultiplayerCoche2 : MonoBehaviour
         if (other.gameObject.tag == "Finish")
         {
             onTime = false;
-            Invoke("Finalizar", 3f);
+            Finalizar();
         }
         if (other.gameObject.tag == "NearFinish")
         {
@@ -172,6 +172,6 @@ public class MultiplayerCoche2 : MonoBehaviour
     }
     private void Finalizar()
     {
-        MultiplayerSceneManager.instance.FinalizarPantalla("Coche 1");
+        MultiplayerUIPausa.instance.FinalizarPantalla("Coche Rojo");
     }
 }

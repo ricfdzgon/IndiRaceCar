@@ -6,12 +6,14 @@ using TMPro;
 public class MultiplayerUIPausa : MonoBehaviour
 {
     public Canvas menuPausa;
-    private double finalTime;
+    public Canvas menuFinal;
+    public TextMeshProUGUI nombreGanador;
 
     public static MultiplayerUIPausa instance;
     void Start()
     {
         menuPausa.enabled = false;
+        menuFinal.enabled = false;
         instance = this;
     }
 
@@ -59,8 +61,24 @@ public class MultiplayerUIPausa : MonoBehaviour
 
     public void MenuFinal(double time)
     {
-        finalTime = time;
         menuPausa.enabled = false;
+    }
+
+    public void FinalizarPantalla(string cocheGanador)
+    {
+        Time.timeScale = 0;
+        menuPausa.enabled = false;
+        menuFinal.enabled = true;
+        nombreGanador.text = cocheGanador;
+
+        if (cocheGanador.Equals("Coche Amarillo"))
+        {
+            nombreGanador.color = Color.yellow;
+        }
+        else
+        {
+            nombreGanador.color = Color.red;
+        }
     }
 
 }
