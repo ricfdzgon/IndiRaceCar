@@ -8,6 +8,7 @@ public class MainMenuUI : MonoBehaviour
     public GameObject principal;
     public GameObject unjugador;
     public GameObject marcadores;
+    public GameObject multijugadorL;
 
     public ScoreTable scoreTable;
 
@@ -20,6 +21,12 @@ public class MainMenuUI : MonoBehaviour
     {
         principal.SetActive(false);
         unjugador.SetActive(true);
+    }
+    public void MultijugadorLOnClick()
+    {
+        principal.SetActive(false);
+        unjugador.SetActive(false);
+        multijugadorL.SetActive(true);
     }
 
     public void UnJugadorOnClickLake()
@@ -34,7 +41,18 @@ public class MainMenuUI : MonoBehaviour
     {
         SceneManager.LoadScene("Sprint Track");
     }
-
+    public void MultijugadorLOnClickLake()
+    {
+        SceneManager.LoadScene("Multi_race_track_lake");
+    }
+    public void MultijugadorLOnClickNight()
+    {
+        SceneManager.LoadScene("Multi_scene1-night");
+    }
+    public void MultijugadorLOnClickMountain()
+    {
+        SceneManager.LoadScene("Multi_Sprint_Track");
+    }
     public void MarcadoresOnClick()
     {
         principal.SetActive(false);
@@ -60,6 +78,7 @@ public class MainMenuUI : MonoBehaviour
         principal.SetActive(true);
         unjugador.SetActive(false);
         marcadores.SetActive(false);
+        multijugadorL.SetActive(false);
     }
     public void Salir()
     {

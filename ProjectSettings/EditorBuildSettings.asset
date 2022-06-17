@@ -17,4 +17,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/scene1-night.unity
     guid: 19333f7b4eb3259429d8674904f1a3b5
+  - enabled: 1
+    path: Assets/Scenes/ScenesMultiplayer/Multi_race_track_lake.unity
+    guid: 44c83106cb3ee2949bf00d42e8ca7255
+  - enabled: 1
+    path: Assets/Scenes/ScenesMultiplayer/Multi_scene1-night.unity
+    guid: 2691a635854d12e4f87729ee54cd2eb5
+  - enabled: 1
+    path: Assets/Scenes/ScenesMultiplayer/Multi_Sprint_Track.unity
+    guid: 059e2a587a32b384786955e559577853
   m_configObjects: {}
