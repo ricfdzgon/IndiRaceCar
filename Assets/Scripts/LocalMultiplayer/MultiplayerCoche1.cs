@@ -49,13 +49,13 @@ public class MultiplayerCoche1 : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q))
         {
             marchaEngranada--;
-            //   UICoche.instance.CambiarTextoMarcha(marchaEngranada);
+            UICocheMulti.instance.CambiarTextoMarcha(marchaEngranada);
         }
 
         if (Input.GetKeyDown(KeyCode.E))
         {
             marchaEngranada++;
-            //     UICoche.instance.CambiarTextoMarcha(marchaEngranada);
+            UICocheMulti.instance.CambiarTextoMarcha(marchaEngranada);
         }
 
         marchaEngranada = Mathf.Clamp(marchaEngranada, -1, 1);
@@ -101,18 +101,15 @@ public class MultiplayerCoche1 : MonoBehaviour
             rearBrake = true;
         }
 
-        //  moveDirection = Input.GetAxis("Vertical");
 
         //Gestion de la direccion
         steerDirection = Input.GetAxis("Horizontal");
-        //        UICoche.instance.CambiarTextoVelocidad(rb.velocity.magnitude);
-
+        UICocheMulti.instance.CambiarTextoVelocidad(rb.velocity.magnitude);
 
         //Gestion del tiempo
         if (onTime)
         {
             timer += Time.deltaTime;
-            //   UICoche.instance.UpdateTemporizador(timer);
         }
     }
 
