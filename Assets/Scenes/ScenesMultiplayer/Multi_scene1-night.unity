@@ -25880,6 +25880,10 @@ PrefabInstance:
       propertyPath: motorTorque
       value: 300
       objectReference: {fileID: 0}
+    - target: {fileID: 2451516080249881867, guid: 0299628893a40bf48a0eda5a01d13759, type: 3}
+      propertyPath: m_Intensity
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 2792218741957914664, guid: 0299628893a40bf48a0eda5a01d13759, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -25939,6 +25943,10 @@ PrefabInstance:
     - target: {fileID: 3311311803080157842, guid: 0299628893a40bf48a0eda5a01d13759, type: 3}
       propertyPath: m_Name
       value: MultiRacingCar
+      objectReference: {fileID: 0}
+    - target: {fileID: 4966897359898769435, guid: 0299628893a40bf48a0eda5a01d13759, type: 3}
+      propertyPath: m_Intensity
+      value: 25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0299628893a40bf48a0eda5a01d13759, type: 3}
@@ -37225,6 +37233,14 @@ PrefabInstance:
     - target: {fileID: 3311311803080157842, guid: 15ca62223721ed34e98471ed5a0c3b96, type: 3}
       propertyPath: m_Name
       value: MultiRacingCarRed
+      objectReference: {fileID: 0}
+    - target: {fileID: 5475905672667341279, guid: 15ca62223721ed34e98471ed5a0c3b96, type: 3}
+      propertyPath: m_Intensity
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7213506393851928202, guid: 15ca62223721ed34e98471ed5a0c3b96, type: 3}
+      propertyPath: m_Intensity
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 8503854949088077127, guid: 15ca62223721ed34e98471ed5a0c3b96, type: 3}
       propertyPath: motorTorque
