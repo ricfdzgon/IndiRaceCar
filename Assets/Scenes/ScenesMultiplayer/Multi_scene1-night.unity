@@ -25882,7 +25882,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2451516080249881867, guid: 0299628893a40bf48a0eda5a01d13759, type: 3}
       propertyPath: m_Intensity
-      value: 25
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2792218741957914664, guid: 0299628893a40bf48a0eda5a01d13759, type: 3}
       propertyPath: m_RootOrder
@@ -25944,9 +25944,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: MultiRacingCar
       objectReference: {fileID: 0}
+    - target: {fileID: 4751714396156014977, guid: 0299628893a40bf48a0eda5a01d13759, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4966897359898769435, guid: 0299628893a40bf48a0eda5a01d13759, type: 3}
       propertyPath: m_Intensity
-      value: 25
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8128299055371708134, guid: 0299628893a40bf48a0eda5a01d13759, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0299628893a40bf48a0eda5a01d13759, type: 3}
@@ -37174,6 +37182,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2086524027599200850, guid: 15ca62223721ed34e98471ed5a0c3b96, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2792218741957914664, guid: 15ca62223721ed34e98471ed5a0c3b96, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -37236,11 +37248,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5475905672667341279, guid: 15ca62223721ed34e98471ed5a0c3b96, type: 3}
       propertyPath: m_Intensity
-      value: 25
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7213506393851928202, guid: 15ca62223721ed34e98471ed5a0c3b96, type: 3}
       propertyPath: m_Intensity
-      value: 25
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7816802247123549825, guid: 15ca62223721ed34e98471ed5a0c3b96, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8503854949088077127, guid: 15ca62223721ed34e98471ed5a0c3b96, type: 3}
       propertyPath: motorTorque

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class MultiplayerCoche2 : MonoBehaviour
 {
+    public GameObject luzFrenoIzquierda;
+    public GameObject luzFrenoDerecha;
     public Wheel frontLeftWheel;
     public Wheel frontRightWheel;
     public Wheel RearLeftWheel;
@@ -36,6 +38,8 @@ public class MultiplayerCoche2 : MonoBehaviour
         marchaEngranada = 1;
         timer = 0.0f;
         onTime = false;
+        luzFrenoDerecha.SetActive(false);
+        luzFrenoIzquierda.SetActive(false);
     }
 
     void Update()
@@ -119,6 +123,8 @@ public class MultiplayerCoche2 : MonoBehaviour
         frontRightWheel.Steer(steerDirection);
         if (brake)
         {
+            luzFrenoDerecha.SetActive(true);
+            luzFrenoIzquierda.SetActive(true);
             if (!rearBrake)
             {
                 foreach (Wheel wheel in wheels)
@@ -143,6 +149,8 @@ public class MultiplayerCoche2 : MonoBehaviour
             {
                 wheel.Accelerate(moveDirection * motorTorque / 2);
             }
+            luzFrenoDerecha.SetActive(false);
+            luzFrenoIzquierda.SetActive(false);
         }
     }
 

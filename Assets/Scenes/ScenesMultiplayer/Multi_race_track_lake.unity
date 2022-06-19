@@ -7685,10 +7685,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2086524027599200850, guid: 15ca62223721ed34e98471ed5a0c3b96, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2792218741957914664, guid: 15ca62223721ed34e98471ed5a0c3b96, type: 3}
       propertyPath: m_RootOrder
       value: 15
@@ -7736,10 +7732,6 @@ PrefabInstance:
     - target: {fileID: 3311311803080157842, guid: 15ca62223721ed34e98471ed5a0c3b96, type: 3}
       propertyPath: m_Name
       value: MultiRacingCarRed
-      objectReference: {fileID: 0}
-    - target: {fileID: 7816802247123549825, guid: 15ca62223721ed34e98471ed5a0c3b96, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15ca62223721ed34e98471ed5a0c3b96, type: 3}
@@ -11399,14 +11391,6 @@ PrefabInstance:
     - target: {fileID: 3311311803080157842, guid: 0299628893a40bf48a0eda5a01d13759, type: 3}
       propertyPath: m_Name
       value: MultiRacingCar
-      objectReference: {fileID: 0}
-    - target: {fileID: 4751714396156014977, guid: 0299628893a40bf48a0eda5a01d13759, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8128299055371708134, guid: 0299628893a40bf48a0eda5a01d13759, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0299628893a40bf48a0eda5a01d13759, type: 3}
