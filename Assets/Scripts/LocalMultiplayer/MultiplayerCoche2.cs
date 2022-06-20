@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class MultiplayerCoche2 : MonoBehaviour
 {
+    public AudioClip freno;
+    public AudioClip aceleracion;
+    public AudioSource audioSource;
     public GameObject luzFrenoIzquierda;
     public GameObject luzFrenoDerecha;
     public Wheel frontLeftWheel;
@@ -68,6 +71,7 @@ public class MultiplayerCoche2 : MonoBehaviour
         //Gestion del acelerador
         if (Input.GetKey(KeyCode.UpArrow))
         {
+            ReproducirSonido("aceleracion");
             switch (marchaEngranada)
             {
                 case 1:
@@ -115,6 +119,11 @@ public class MultiplayerCoche2 : MonoBehaviour
         {
             timer += Time.deltaTime;
         }
+        if (!brake)
+        {
+            audioSource.pitch = rb.velocity.magnitude / 20;
+            audioSource.pitch = Mathf.Clamp(audioSource.pitch, 0.35f, 100.0f);
+        }
     }
 
     void FixedUpdate()
@@ -123,6 +132,7 @@ public class MultiplayerCoche2 : MonoBehaviour
         frontRightWheel.Steer(steerDirection);
         if (brake)
         {
+            ReproducirSonido("freno");
             luzFrenoDerecha.SetActive(true);
             luzFrenoIzquierda.SetActive(true);
             if (!rearBrake)
@@ -140,6 +150,10 @@ public class MultiplayerCoche2 : MonoBehaviour
         }
         else
         {
+            if (audioSource.clip == freno)
+            {
+                ReproducirSonido("aceleracion");
+            }
             foreach (Wheel wheel in wheels)
             {
                 wheel.Brake(0);
@@ -178,5 +192,26 @@ public class MultiplayerCoche2 : MonoBehaviour
     private void Finalizar()
     {
         MultiplayerUIPausa.instance.FinalizarPantalla("Coche Rojo");
+    }
+
+    private void ReproducirSonido(string sonido)
+    {
+        if (sonido == "freno")
+        {
+            if (audioSource.clip != freno)
+            {
+                audioSource.pitch = 1;
+                audioSource.clip = freno;
+                audioSource.Play();
+            }
+        }
+        else if (sonido == "aceleracion")
+        {
+            if (audioSource.clip != aceleracion)
+            {
+                audioSource.clip = aceleracion;
+                audioSource.Play();
+            }
+        }
     }
 }

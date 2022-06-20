@@ -11392,6 +11392,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MultiRacingCar
       objectReference: {fileID: 0}
+    - target: {fileID: 3318897008647978689, guid: 0299628893a40bf48a0eda5a01d13759, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0299628893a40bf48a0eda5a01d13759, type: 3}
 --- !u!1 &1551644208 stripped
