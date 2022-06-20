@@ -25,12 +25,21 @@ public class MoveTo : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Waypoint")
+        if (other.gameObject.tag == "Waypoint" && currentWaypoint < maxWaypoints)
         {
             currentWaypoint++;
             Debug.Log(currentWaypoint);
             Debug.Log(maxWaypoints);
         }
+        if (other.gameObject.tag == "Finish")
+        {
+            Finalizar();
+        }
+
+    }
+    private void Finalizar()
+    {
+        MultiplayerUIPausa.instance.FinalizarPantalla("Coche Bot");
     }
 
 }
