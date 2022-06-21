@@ -25,6 +25,7 @@ public class MoveTo : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("Entra" + other.gameObject.tag);
         if (other.gameObject.tag == "Waypoint" && currentWaypoint < maxWaypoints)
         {
             currentWaypoint++;
@@ -35,7 +36,10 @@ public class MoveTo : MonoBehaviour
         {
             Finalizar();
         }
-
+        if (other.gameObject.tag == "SecondLapTrigger")
+        {
+            ControlObstaculos.instance.CambiarVuelta();
+        }
     }
     private void Finalizar()
     {
